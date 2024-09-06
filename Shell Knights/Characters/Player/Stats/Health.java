@@ -1,9 +1,12 @@
 package Characters.Player.Stats;
 
+import Items.Healing.Healing;
+
 public class Health {
     private Integer health;
 
-    public Health() {
+    public Health(Integer health) {
+        this.health = health;
     }
 
     public Integer getHealth() {
@@ -14,13 +17,13 @@ public class Health {
         this.health = health;
     }
 
-    public Integer addHealth(Integer amount){
+    public void addHealth(Healing amount){
         if (health == 100){
-           return health = 100;
-        } else if (health + amount >= 100) {
-            return health = 100;
+           health = 100;
+        } else if (health + amount.healing() >= 100) {
+            health = 100;
         } else {
-            return health += amount;
+            health += amount.healing();
         }
     }
 
