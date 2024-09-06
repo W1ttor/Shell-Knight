@@ -1,6 +1,9 @@
 package Characters.Npc.Friends;
 
-public class Jesus {
+import Characters.Npc.Friends.HealingNPC.HealingNPC;
+import Items.Healing.Healing;
+
+public class Jesus implements HealingNPC, Healing {
     /*
     *
     * Jesus lhe dará vigor quando estiver cansado!
@@ -21,5 +24,10 @@ public class Jesus {
     @Override
     public String toString(){
         return name + " lhe deu mais " + force + " de vigor";
+    }
+
+    @Override
+    public Integer healing() {
+        return getForce();
     }
 }
